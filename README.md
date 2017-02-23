@@ -14,23 +14,32 @@
 
 ### darabase design 
 
-#### users table 
-- name:     string  null:false add_index
-- email:    text    null:false add_index
-- password: string  null:false
+#### users table
 
+```******_create_users.rb
+t.string  :name, index: true, null:false 
+t.text    :email, index: true, null:false
+t.string  :password, null:false
+```
 #### users_groups table
 
-- user_id:   string null:false
-- groups_id: string null:false
+```******_create_users_groups.rb
+t.references  :user, foreign_key: true
+t.references  :group, foreign_key: true
+```
 
 #### groups table 
-- name:     string  null:false add_index
-- user_id:  integer null:false
+
+```******_create_groups.rb
+t.string  :groups_name, null:false
+```
 
 #### messages table 
-- body:     text    null:false
-- image:    string 
-- group_id: integer null:false
-- user_id:  integer null:false
+
+```******_create_messages.rb
+t.text    :body, null:false
+t.text    :image
+t.references  :group, foreign_key: true
+t.references  :user, foreign_key: true
+```
 
