@@ -24,7 +24,7 @@ t.string  :password, null:false
 
 ```ruby:user.rb
 has_many :messesages
-has_many :groups, :throuth => :group_ids
+has_many :groups, :throuth => :users_groups
 ```
 
 
@@ -48,7 +48,7 @@ t.string  :groups_name, null:false
 
 ```ruby:group.rb 
 has_many :messages
-has_many :users, :through => :user_ids
+has_many :users, :through => :users_groups
 ```
 
 #### messages table 
