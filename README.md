@@ -15,25 +15,22 @@
 ### darabase design 
 
 #### users table 
-name:     string  null:false add_index
-email:    text    null:false add_index
-password: string  null:false
+-name:     string  null:false add_index
+-email:    text    null:false add_index
+-password: string  null:false
 
-#### users_groups
-user_id:   string null:false
-groups_id: string null:false
+#### users_groups table
+
+-user_id:   string null:false
+-groups_id: string null:false
 
 #### groups table 
-name:     string  null:false add_index
-user_id:  integer null:false
+-name:     string  null:false add_index
+-user_id:  integer null:false
 
 #### messages table 
-body:     text    null:false
-image:    string  
-group_id: integer null:false
-user_id:  integer null:false
-
-
-
-
+-body:     text    null:false
+-image:    string 
+-group_id: integer null:false
+-user_id:  integer null:false
 
