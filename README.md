@@ -16,30 +16,54 @@
 
 #### users table
 
-```******_create_users.rb
+```ruby:******_create_users.rb
 t.string  :name, index: true, null:false 
 t.text    :email, index: true, null:false
 t.string  :password, null:false
 ```
+
+```ruby:user.rb
+has_many :messesages
+has_many :groups, :throuth => :group_ids
+```
+
+
 #### users_groups table
 
-```******_create_users_groups.rb
+```ruby:******_create_users_groups.rb
 t.references  :user, foreign_key: true
 t.references  :group, foreign_key: true
 ```
 
+```ruby:user_group.rb
+belongs_to :user
+belongs_to :group
+```
+
 #### groups table 
 
-```******_create_groups.rb
+```ruby:******_create_groups.rb
 t.string  :groups_name, null:false
+```
+
+```ruby:group.rb
+has_many :messages
+has_many :users, :through => :user_ids
 ```
 
 #### messages table 
 
-```******_create_messages.rb
+```ruby:******_create_messages.rb
 t.text    :body, null:false
 t.text    :image
 t.references  :group, foreign_key: true
 t.references  :user, foreign_key: true
 ```
+
+```ruby:message.rb
+belongs_to :user
+belongs_to :group
+```
+
+
 
