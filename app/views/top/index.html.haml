@@ -6,8 +6,10 @@
     .left-contents__right-margin
     .user-menu
       %h2 Shuhei Kaneko
-      =fa_icon("cog 2x")
-      =fa_icon("edit 2x")
+      =link_to "" do
+        =fa_icon("cog 2x")
+      =link_to "" do
+        =fa_icon("edit 2x")
     .group-menu
       .group-menu__top-margin
       -# 以下はテーブル実装時にeachで書き直す予定
@@ -32,7 +34,10 @@
         %p.tweet say sample
       .chat-space__writeme
         =form_tag do
-          = text_field_tag :text,nil,placeholder: '   type a message'
+          .textbox-frame
+            = text_field_tag :text,nil,placeholder: '   type a message'
+            = link_to "" do
+              = fa_icon("image 2x")
           = submit_tag('send',id: 'send')
 
 
