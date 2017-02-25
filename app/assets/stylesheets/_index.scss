@@ -48,7 +48,7 @@ $font:  bold;
   .group-menu{
     padding: 20px 20px 0;
 
-    .group-menu__content{
+    &__content{
       margin-bottom: 40px;
       h2{
         font-size: 15px;
@@ -58,10 +58,6 @@ $font:  bold;
         font-size: 11px;
         color: $white;
         margin-top: 5px;
-      }
-      .group-menu__bottom-margin{
-        height: 40px;
-        width: 100%;
       }
     }
   }
@@ -78,7 +74,7 @@ $font:  bold;
     width: 100%;
     background-color: white;
 
-    .selected-group__name{
+    &__name{
       width: 70%;
       float: left;
       padding:35px 0 0 40px;
@@ -107,7 +103,7 @@ $font:  bold;
     }
   }
 
-  .right-contents__chat-space{
+  &__chat-space{
     border-top-style: solid;
     border-color: #eeeeee;
     // height: 100%;
