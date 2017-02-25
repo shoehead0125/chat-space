@@ -3,6 +3,7 @@ $thin_gray: #999;
 $dark_gray: #434A54;
 $black: #333;
 $white: #FFF;
+$font:  bold;
 
 .container{
   min-width: 600px;
@@ -29,7 +30,7 @@ $white: #FFF;
     h2{
       margin-top: 2px;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: $font;
       color: $white;
       float: left;
     }
@@ -68,7 +69,7 @@ $white: #FFF;
 
 .right-contents{
   height: calc(100vh - 30px);
-  width: calc( 100% - 300px );
+  width: calc(100% - 300px);
   background-color: #aaaaaa; //後で指定の色に戻す
   float: left;
 
@@ -95,7 +96,7 @@ $white: #FFF;
       margin: 28px 40px 0 0;
       float: right;
       font-size: 18px;
-      font-weight: bold;
+      font-weight: $font;
       line-height: 40px;
       padding: 0 20px;
       color: $skyblue;
@@ -116,7 +117,7 @@ $white: #FFF;
       margin-bottom: 40px;
       .tweet--name{
         font-size: 16px;
-        font-weight: bold;
+        font-weight: $font;
         color: $dark_gray;
         display: inline;
       }
@@ -138,24 +139,7 @@ $white: #FFF;
       height: 90px;
       width: calc(100% - 300px);
       background-color: #dddddd;
-      .textbox-frame{
-        display: inline-block;
-        width: calc(100% - 165px);
-        position: relative;
 
-        #text{
-          height: 50px;
-          width: calc(100% - 50px);
-          margin: 20px 25px 20px 50px;
-          font-size: 16px;
-          color: $dark_gray; 
-        }
-        .fa-image{
-          position: absolute;
-          right: 12px;
-          top: 30px;
-        }
-      }
       #send{
         font-size: 20px;
         color: white;
@@ -164,6 +148,28 @@ $white: #FFF;
         background-color: $skyblue;
         border-style: none;
         margin-left: 20px;
+      }
+      .text{
+        height: 50px;
+        width: calc(100% - 225px);
+        margin: 20px 25px 20px 50px;
+        font-size: 16px;
+        color: $dark_gray;
+        position: relative;
+      }
+      .send{
+        font-size: 20px;
+        color: white;
+        height: 50px;
+        width: 100px;
+        background-color: $skyblue;
+        border-style: none;
+        font-weight: $font;
+      }
+      .fa-image{
+        position: absolute;
+        right: 180px;
+        top: 30px;
       }
     }
   }

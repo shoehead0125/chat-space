@@ -26,11 +26,11 @@
         %p.tweet--time 2017/02/24 15:42
         %p.tweet say sample
       .chat-space__writeme
-        =form_tag do
-          .textbox-frame
-            = text_field_tag :text,nil,placeholder: '   type a message'
-            = link_to fa_icon("image 2x")
-          = submit_tag('send',id: 'send')
+        = form_for('') do |f|
+          = f.text_field :message, placeholder: "   type a message", class: "text"
+          = f.submit "send", class: "send"
+        = link_to fa_icon("image 2x")
+
 
 
 
