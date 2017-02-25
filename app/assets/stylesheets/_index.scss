@@ -1,0 +1,164 @@
+.container{
+  min-width: 600px;
+  .banner{
+    height: 30px;
+    background-color: #38aef0;
+    color: white;
+    text-align: center;
+  }
+}
+
+
+.left-contents{
+  height: calc(100vh - 30px);
+  width: 300px;
+  background-color: #2f3e51;
+  float: left;
+
+  .user-menu{
+    padding: 35px 20px 0 20px;
+    height: 75px;
+    background-color: #253141;
+
+    h2{
+      margin-top: 2px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      float: left;
+    }
+    i{
+      float: right;
+      color: white;
+    }
+    .fa-edit{
+      margin-right: 10px;
+    }
+    .fa-cog{
+      margin-right: 15px;
+    }
+  }
+  .group-menu{
+    padding: 20px 20px 0 20px;
+    // h2 p{
+    //   color: #ffffff;
+    // }
+    .group-menu__content{
+      margin-bottom: 40px;
+      h2{
+        font-size: 15px;
+        color: #ffffff;
+      }
+      p{
+        font-size: 11px;
+        color: #ffffff;
+        margin-top: 5px;
+      }
+      .group-menu__bottom-margin{
+        height: 40px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.right-contents{
+  height: calc( 100vh - 30px);
+  width: calc( 100% - 300px );
+  background-color: #aaaaaa; //後で指定の色に戻す
+  float: left;
+
+  .selected-group{
+    height: 110px;
+    width: 100%;
+    background-color: white;
+
+    .selected-group__name{
+      width: 70%;
+      float: left;
+      padding:35px 0 0 40px;
+      h2{
+        font-size: 20px;
+        color: #333333;
+      }
+      p{
+        padding-top: 15px;
+        font-size: 15px;
+        color: #999999;
+      }
+    }
+    button{
+      margin: 28px 40px 0 0;
+      float: right;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 40px;
+      padding: 0 20px;
+      color: #38aef0;
+      background-color: white;
+      border-color: #38aef0;
+    }
+  }
+
+  .right-contents__chat-space{
+    border-top-style: solid;
+    border-color: #eeeeee;
+    height: 100%;
+    padding: 46px 0 0;
+    .chat-space__tweet{
+      padding: 0 0 0 40px;
+      margin-bottom: 40px;
+      .tweet--name{
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+        display: inline;
+      }
+      .tweet--time{
+        font-size: 12px;
+        color: #999999;
+        margin-left: 10px;
+        display: inline;
+      }
+      .tweet{
+        font-size: 14px;
+        color: #434A54;
+        margin-top: 10px;
+      }
+    }
+    .chat-space__writeme{
+      position: absolute;
+      bottom: 0;
+      height: 90px;
+      width: calc( 100% - 300px );
+      background-color: #dddddd;
+      .textbox-frame{
+        display: inline-block;
+        width: calc(100% - 165px);
+        position: relative;
+
+        #text{
+          height: 50px;
+          width: calc(100% - 50px);
+          margin: 20px 25px 20px 50px;
+          font-size: 16px;
+          color: #434A54; 
+        }
+        .fa-image{
+          position: absolute;
+          right: 12px;
+          top: 30px;
+        }
+      }
+      #send{
+        font-size: 20px;
+        color: white;
+        height: 50px;
+        width: 100px;
+        background-color: #38AEF0;
+        border-style: none;
+        margin-left: 20px;
+      }
+    }
+  }
+}
