@@ -91,7 +91,7 @@ $white: #FFF;
         color: $thin_gray;
       }
     }
-    button{
+    .edit{
       margin: 28px 40px 0 0;
       float: right;
       font-size: 18px;
@@ -101,6 +101,8 @@ $white: #FFF;
       color: $skyblue;
       background-color: white;
       border-color: $skyblue;
+      text-decoration: none;
+      border-style: solid;
     }
   }
 
