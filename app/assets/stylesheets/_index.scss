@@ -1,8 +1,14 @@
+$skyblue: #38AEF0;
+$thin_gray: #999;
+$dark_gray: #434A54;
+$black: #333;
+$white: #FFF;
+
 .container{
   min-width: 600px;
   .banner{
     height: 30px;
-    background-color: #38aef0;
+    background-color: $skyblue;
     color: white;
     text-align: center;
   }
@@ -24,7 +30,7 @@
       margin-top: 2px;
       font-size: 16px;
       font-weight: bold;
-      color: #ffffff;
+      color: $white;
       float: left;
     }
     i{
@@ -47,11 +53,11 @@
       margin-bottom: 40px;
       h2{
         font-size: 15px;
-        color: #ffffff;
+        color: $white;
       }
       p{
         font-size: 11px;
-        color: #ffffff;
+        color: $white;
         margin-top: 5px;
       }
       .group-menu__bottom-margin{
@@ -79,12 +85,12 @@
       padding:35px 0 0 40px;
       h2{
         font-size: 20px;
-        color: #333333;
+        color: $black;
       }
       p{
         padding-top: 15px;
         font-size: 15px;
-        color: #999999;
+        color: $thin_gray;
       }
     }
     button{
@@ -94,9 +100,9 @@
       font-weight: bold;
       line-height: 40px;
       padding: 0 20px;
-      color: #38aef0;
+      color: $skyblue;
       background-color: white;
-      border-color: #38aef0;
+      border-color: $skyblue;
     }
   }
 
@@ -111,18 +117,18 @@
       .tweet--name{
         font-size: 16px;
         font-weight: bold;
-        color: #434A54;
+        color: $dark_gray;
         display: inline;
       }
       .tweet--time{
         font-size: 12px;
-        color: #999999;
+        color: $thin_gray;
         margin-left: 10px;
         display: inline;
       }
       .tweet{
         font-size: 14px;
-        color: #434A54;
+        color: $dark_gray;
         margin-top: 10px;
       }
     }
@@ -142,7 +148,7 @@
           width: calc(100% - 50px);
           margin: 20px 25px 20px 50px;
           font-size: 16px;
-          color: #434A54; 
+          color: $dark_gray; 
         }
         .fa-image{
           position: absolute;
@@ -155,7 +161,7 @@
         color: white;
         height: 50px;
         width: 100px;
-        background-color: #38AEF0;
+        background-color: $skyblue;
         border-style: none;
         margin-left: 20px;
       }
