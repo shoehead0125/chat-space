@@ -16,21 +16,22 @@
 
 #### users table
 
-```ruby:******_create_users.rb
+```ruby:******_create_users.rb 
 t.string  :name, index: true, null:false 
 t.text    :email, index: true, null:false
 t.string  :password, null:false
 ```
 
-```ruby:user.rb
+```ruby:user.rb 
 has_many :messesages
-has_many :groups, :throuth => :users_groups
+has_many :groups, :throuth => :user_groups
+has_many :user_groups
 ```
 
 
-#### users_groups table 
+#### user_groups table 
 
-```ruby:******_create_users_groups.rb 
+```ruby:******_create_user_groups.rb 
 t.references  :user, foreign_key: true
 t.references  :group, foreign_key: true
 ```
@@ -48,7 +49,8 @@ t.string  :groups_name, null:false
 
 ```ruby:group.rb 
 has_many :messages
-has_many :users, :through => :users_groups
+has_many :users, :through => :user_groups
+has_many :user_groups
 ```
 
 #### messages table 
