@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
 
-  resources :groups, only: [:new, :edit, :create]
+  resources :groups, except: [:show,:index, :destroy]
 
 end
