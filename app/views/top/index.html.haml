@@ -1,7 +1,7 @@
 .container
   .left-contents
     .user-menu
-      %h2 Shuhei Kaneko
+      %h2 #{@user.name}
       =link_to fa_icon("cog 2x"),edit_user_registration_path
       =link_to fa_icon("edit 2x"), new_group_path
     .group-menu

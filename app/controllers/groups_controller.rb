@@ -5,10 +5,12 @@ class GroupsController < ApplicationController
   end
 
   def create
-    if Group.create(group_params)
-      redirect_to root_path
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to root_path, notice: 'グループが作成されました。'
     else
-      redirect_to new_group_path
+      flash.now[:alert] = 'グループが作成されませんでした。'
+      render new_group_path
     end
   end
 
