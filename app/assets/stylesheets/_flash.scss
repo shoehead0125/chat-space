@@ -1,10 +1,10 @@
 .flash{
     height: 30px;
     text-align: center;
-    color: white;
+    color: $white;
 
   &.notice{
-    background-color: #38AEF0;
+    background-color: $skyblue;
   }
 
   &.alert{
