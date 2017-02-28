@@ -1,18 +1,8 @@
 @import "./reset";
+@import "variables.scss";
+@import "shared.scss";
 @import "font-awesome";
 @import "index.scss";
+@import "flash.scss";
 @import "user.scss";
-
-.flash{
-    height: 30px;
-    text-align: center;
-    color: white;
-
-  &.notice{
-    background-color: #38AEF0;
-  }
-
-  &.alert{
-    background-color: red;
-  }
-}
+@import "group.scss";
