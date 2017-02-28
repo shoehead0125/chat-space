@@ -1,3 +1,19 @@
 .container
   = render partial: '/shared/left-content'
-  
+  .right-contents
+    .selected-group
+      .selected-group__name
+        %h2 "#{@group.name}"
+        %p Menbers: sample太郎, sample子, sample平
+      =link_to "Edit", edit_group_path(@group), class: "edit"
+    .right-contents__chat-space
+      .chat-space__tweet
+        %p.tweet--name sample太郎
+        %p.tweet--time 2017/02/24 15:42
+        %p.tweet say sample
+      .chat-space__writeme
+        = form_for('') do |f|
+          = f.text_field :message, placeholder: "   type a message", class: "text"
+          = f.submit "send", class: "send"
+        = link_to fa_icon("image 2x")
+
