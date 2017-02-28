@@ -3,9 +3,9 @@
   .right-contents
     .selected-group
       .selected-group__name
-        %h2 sampleグループ
+        %h2 "#{@group.name}"
         %p Menbers: sample太郎, sample子, sample平
-      =link_to "Edit",'',class: "edit"
+      =link_to "Edit", edit_group_path(@group), class: "edit"
     .right-contents__chat-space
       .chat-space__tweet
         %p.tweet--name sample太郎
@@ -16,3 +16,4 @@
           = f.text_field :message, placeholder: "   type a message", class: "text"
           = f.submit "send", class: "send"
         = link_to fa_icon("image 2x")
+
