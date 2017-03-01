@@ -3,12 +3,11 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
     current_id = current_user.id
-    @users = User.where.not("id = #{current_id}")
+    @users = User.all
   end
 
   def create
     @group = Group.new(group_params)
-    params[:group][:user_ids] << current_user.id
     if @group.save
       redirect_to group_messages_path(@group), notice: 'グループが作成されました。'
     else
