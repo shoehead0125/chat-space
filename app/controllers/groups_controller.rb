@@ -2,7 +2,6 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    current_id = current_user.id
     @users = User.all
   end
 
