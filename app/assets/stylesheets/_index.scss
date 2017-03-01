@@ -69,10 +69,13 @@
         font-size: 20px;
         color: $black;
       }
-      p{
+      ul{
         padding-top: 15px;
         font-size: 15px;
         color: $thin_gray;
+        li{
+          display: inline-block;
+        }
       }
     }
     .edit{

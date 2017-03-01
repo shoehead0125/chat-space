@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @users = User.all
   end
 
   def create
@@ -9,8 +10,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to group_messages_path(@group), notice: 'グループが作成されました。'
     else
-      flash.now[:alert] = 'グループが作成されませんでした。'
-      render new_group_path
+      redirect_to new_group_path, alert: 'グループが作成されませんでした。'
     end
   end
 
@@ -30,7 +30,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, { :user_ids => [] })
   end
 
 end
