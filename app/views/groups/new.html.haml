@@ -12,7 +12,7 @@
       .chat-group-form__field--right
         .chat-group-form__search
           = f.label :users, style: "visibility:hidden"
-          = collection_check_boxes(:group, :user_ids, @users, :id, :name) do |t|
+          = collection_check_boxes(:group, :user_ids, @users, :id, :name) do |u|
             = t.label { t.check_box + t.text }
           #user-search-field.chat-group-form__input
         #user-search-result
