@@ -1,5 +1,5 @@
 .container
-  = render partial: '/shared/left-content'
+  = render partial: '/shared/left-content', locals: {groups: @groups}
   .right-contents
     .selected-group
       .selected-group__name
@@ -10,13 +10,14 @@
             %li= user.name
       =link_to "Edit", edit_group_path(@group), class: "edit"
     .right-contents__chat-space
-      .chat-space__tweet
-        %p.tweet--name sample太郎
-        %p.tweet--time 2017/02/24 15:42
-        %p.tweet say sample
+      - @messages.each do |message|
+        .chat-space__tweet
+          %p.tweet--name= message.user.name
+          %p.tweet--time= message.created_at
+          %p.tweet= message.body
       .chat-space__writeme
         = form_for('') do |f|
-          = f.text_field :message, placeholder: "   type a message", class: "text"
+          = f.text_field :body, placeholder: "   type a message", class: "text"
           = f.submit "send", class: "send"
         = link_to fa_icon("image 2x")
 
