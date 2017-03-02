@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :generate_instance, only: [:edit, :update]
+  before_action :set_instance, only: [:edit, :update]
 
   def new
     @group = Group.new
@@ -39,7 +39,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, { :user_ids => [] })
   end
 
-  def generate_instance
+  def set_instance
     @group = Group.find(params[:id])
   end
 
