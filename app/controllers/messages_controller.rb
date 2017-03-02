@@ -1,8 +1,7 @@
 class MessagesController < ApplicationController
-  before_action :message_set_new
+  before_action :store_messages_instance
 
-  def index
-  end
+  def index; end
 
   def create
     @message = Message.new(message_params)
@@ -20,11 +19,11 @@ class MessagesController < ApplicationController
     params.permit(:body, :image, :group_id, :user_id)
   end
 
-  def message_set_new
+  def store_messages_instance
     @group = Group.find(params[:group_id])
     @groups = current_user.groups
     @users = @group.users
-    @messages = Message.where(group_id: @group.id)
+    @messages = @group.messages
   end
 
 end
