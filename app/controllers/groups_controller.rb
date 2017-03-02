@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
       redirect_to group_messages_path(@group), notice: 'グループが作成されました。'
     else
       flash.now[:alert] = 'グループが作成されませんでした。'
-      render action: "new"
+      render action: :new
     end
   end
 
@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
       redirect_to group_messages_path(@group), notice: 'グループが更新されました。'
     else
       flash.now[:alert] = 'グループが更新されませんでした。'
-      render action: "edit"
+      render action: :edit
     end
   end
 
