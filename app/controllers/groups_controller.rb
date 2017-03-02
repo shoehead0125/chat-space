@@ -12,7 +12,10 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to group_messages_path(@group), notice: 'グループが作成されました。'
     else
-      redirect_to new_group_path, alert: 'グループが作成されませんでした。'
+      @group = Group.new
+      @users = User.all
+      flash.now[:alert] = 'グループが作成されませんでした。'
+      render :action => "new"
     end
   end
 
@@ -24,7 +27,10 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: 'グループが更新されました。'
     else
-      redirect_to edit_group_path(@group), alert: 'グループが更新されませんでした。'
+      flash.now[:alert] = 'グループが更新されませんでした。'
+      @group = Group.find(params[:id])
+      @users = User.all
+      render :action => "edit"
     end
   end
 
