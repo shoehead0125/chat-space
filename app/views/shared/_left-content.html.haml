@@ -4,7 +4,4 @@
     =link_to fa_icon("cog 2x"),edit_user_registration_path
     =link_to fa_icon("edit 2x"), new_group_path
   .group-menu
-    - groups.each do |group|
-      .group-menu__content
-        =link_to group.name, group_messages_path(group)
-        %p= group.messages.order(:created_at).last.body
+    = render partial: '/shared/group', collections: @groups
