@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :message_set_new, only: [:index, :create]
+  before_action :message_set_new
 
   def index
   end
