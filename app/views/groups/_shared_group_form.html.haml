@@ -1,14 +1,11 @@
 .chat-group-form
-  %h1= controller.action_name == 'new' ? "新規チャットグループ" : "チャットグループ編集"
+  %h1= group.new_record? ? "新規チャットグループ" : "チャットグループ編集"
   = form_for(group) do |f|
     .chat-group-form__field
       .chat-group-form__field--left
         = f.label :name, 'グループ名', class: "chat-group-form__label"
       .chat-group-form__field--right
-        - if controller.action_name == 'new'
-          = f.text_field :name, placeholder: "グループ名を入力してください", id: "chat-group-name", class: "chat-group-form__input"
-        - else
-          = f.text_field :name, value: group.name, id: "chat_group_name", class: "chat-group-form__input"
+        = f.text_field :name, placeholder: "グループ名を入力してください", id: "chat-group-name", class: "chat-group-form__input"
     .chat-group-form__field
       .chat-group-form__field--left
         = f.label :users, "チャットメンバーを追加", class: "chat-group-form__label"
@@ -19,7 +16,7 @@
     .chat-group-form__field
       .chat-group-form__field--left
         = f.label :name, "チャットメンバー", class: "chat-group-form__label"
-      -if controller.action_name == 'new'
+      -if group.new_record?
         .chat-group-form__field--right
           #chat-group-users
             #chat-group-users-22.chat-group-user
