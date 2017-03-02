@@ -10,11 +10,7 @@
             %li= user.name
       =link_to "Edit", edit_group_path(@group), class: "edit"
     .right-contents__chat-space
-      - @messages.each do |message|
-        .chat-space__tweet
-          %p.tweet--name= message.user.name
-          %p.tweet--time= message.created_at
-          %p.tweet= message.body
+      = render partial: 'message', collection: @messages
       .chat-space__writeme
         = form_for('') do |f|
           = f.text_field :body, placeholder: "   type a message", class: "text"
