@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
   end
 
   def store_messages_instance
-    @group = Group.includes(:messages).find(params[:group_id])
+    @group = Group.find(params[:group_id])
     @groups = current_user.groups
   end
 
