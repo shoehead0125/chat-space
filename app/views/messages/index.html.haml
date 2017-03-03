@@ -6,17 +6,13 @@
         %h2= @group.name
         %ul
           %li Menbers:
-          - @users.each do |user|
+          - @group.users.each do |user|
             %li= user.name
       =link_to "Edit", edit_group_path(@group), class: "edit"
     .right-contents__chat-space
-      .chat-space__tweet
-        %p.tweet--name sample太郎
-        %p.tweet--time 2017/02/24 15:42
-        %p.tweet say sample
+      = render partial: 'message', collection: @messages
       .chat-space__writeme
-        = form_for('') do |f|
-          = f.text_field :message, placeholder: "   type a message", class: "text"
+        = form_for ([@group, @message]) do |f|
+          = f.text_field :body, placeholder: "   type a message", class: "text"
           = f.submit "send", class: "send"
         = link_to fa_icon("image 2x")
-

@@ -37,7 +37,7 @@
 
     &__content{
       margin-bottom: 40px;
-      h2{
+      a{
         font-size: 15px;
         color: $white;
       }
@@ -96,8 +96,9 @@
   &__chat-space{
     border-top-style: solid;
     border-color: #eeeeee;
-    // height: 100%;
     padding: 46px 0 0;
+    overflow: scroll;
+    height: calc(100% - 150px);
     .chat-space__tweet{
       padding-left: 40px;
       margin-bottom: 40px;
