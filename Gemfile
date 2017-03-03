@@ -53,6 +53,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'rake', '<11.0'
 
 group :test do
   gem 'faker'
