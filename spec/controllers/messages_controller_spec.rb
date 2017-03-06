@@ -53,6 +53,4 @@ describe MessagesController do
       expect(response).to render_template :index, { group_id: group.id }
     end
   end
-
-
 end
