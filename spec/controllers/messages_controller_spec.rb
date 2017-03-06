@@ -32,7 +32,7 @@ describe MessagesController do
     end
 
     it "renders the :index template" do
-      get :index, params: {group_id: group.id}
+      get :index, params: { group_id: group.id }
       expect(response).to render_template :index
     end
   end
@@ -40,17 +40,17 @@ describe MessagesController do
   describe 'POST #create' do
     it "saves the new contact in the database" do
       expect{
-        post :create, {group_id: group.id, message: attributes_for(:message)}}.to change(Message, :count).by(1)
+        post :create, params: { group_id: group.id, message: attributes_for(:message) }}.to change(Message, :count).by(1)
     end
 
     example ": create successful to render the :index template" do
-      post :create, {group_id: group.id, message: attributes_for(:message)}
-      expect(response).to redirect_to(group_id: group.id)
+      post :create, params: { group_id: group.id, message: attributes_for(:message) }
+      expect(response).to redirect_to({ group_id: group.id })
     end
 
     example ": create unsuccessful to render the same template" do
-      post :create, {group_id: group.id, message: invalid_attributes}
-      expect(response).to render_template :index, params: { group_id: group.id}
+      post :create, params: { group_id: group.id, message: invalid_attributes }
+      expect(response).to render_template :index, { group_id: group.id }
     end
   end
 
