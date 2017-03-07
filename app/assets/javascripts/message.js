@@ -8,14 +8,13 @@ $(function(){
   }
   $('.js-form').on('submit', function(e){
     e.preventDefault();
+    e.stopPropagation();
     var textField = $('.js-form__text-field');
     var message = textField.val();
     var path_name = location.pathname;
     $.ajax({
       type: 'POST',
       url: path_name,
-      beforeSend : function(xhr){
-        xhr.setRequestHeader("If-Modified-Since", "Thu, 01 Jun 1970 00:00:00 GMT");
       data: {
         message: {
           body: message
