@@ -12,7 +12,7 @@
     .right-contents__chat-space
       = render partial: 'message', collection: @messages
       .chat-space__writeme
-        = form_for ([@group, @message]) do |f|
-          = f.text_field :body, placeholder: "   type a message", class: "text"
+        = form_for ([@group, @message]), html: { class: 'js-form' } do |f|
+          = f.text_field :body, placeholder: "   type a message", class: "text js-form__text-field"
           = f.submit "send", class: "send"
         = link_to fa_icon("image 2x")
