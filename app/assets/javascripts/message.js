@@ -1,8 +1,8 @@
 $(function(){
   function buildHTML(message){
-    var tweet_name = (`<p class=tweet--name>${ message.name }`);
-    var tweet_time = (`<p class=tweet--time>${ message.created_at }`);
-    var tweet      = (`<p class=tweet>${ message.body }`);
+    var tweet_name = (`<p class=tweet--name>${ message.name }</p>`);
+    var tweet_time = (`<p class=tweet--time>${ message.created_at }</p>`);
+    var tweet      = (`<p class=tweet>${ message.body }</p>`);
     var html = $('<div class="chat-space__tweet">').append(tweet_name, tweet_time, tweet);
     return html;
   }
@@ -14,6 +14,8 @@ $(function(){
     $.ajax({
       type: 'POST',
       url: path_name,
+      beforeSend : function(xhr){
+        xhr.setRequestHeader("If-Modified-Since", "Thu, 01 Jun 1970 00:00:00 GMT");
       data: {
         message: {
           body: message
