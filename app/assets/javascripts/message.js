@@ -1,9 +1,9 @@
 $(function(){
   function buildHTML(message){
-    var tweet_name = (`<p class=tweet--name>${ message.name }</p>`);
-    var tweet_time = (`<p class=tweet--time>${ message.created_at }</p>`);
-    var tweet      = (`<p class=tweet>${ message.body }</p>`);
-    var html = $('<div class="chat-space__tweet">').append(tweet_name, tweet_time, tweet);
+    var html = (`<div class="chat-space__tweet">
+                  <p class=tweet--name>${ message.name }</p>
+                  <p class=tweet--time>${ message.created_at }</p>
+                  <p class=tweet>${ message.body }</p></div>`);
     return html;
   }
   $('.js-form').on('submit', function(e){
@@ -11,6 +11,7 @@ $(function(){
     e.stopPropagation();
     var textField = $('.js-form__text-field');
     var message = textField.val();
+    debugger;
     var path_name = location.pathname;
     $.ajax({
       type: 'POST',
