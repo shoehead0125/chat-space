@@ -40,18 +40,6 @@ $(function(){
     .fail(function(){
       alert('error');
     });
-    // $(".list").remove();
-    // if(word != preword && input.length !== 0){
-    //   $.each(fruits, function(i, fruit){
-    //     if(fruit.match(reg)){
-    //       appendList(fruit);
-    //     }
-    //   });
-    //   if($(".list").length === 0){
-    //     appendList("一致するものはありません");
-    //   }
-    // }
-    // preword = word;
   });
 });
 
