@@ -76,6 +76,15 @@
       @include clearfix;
     }
 
+    #user-search-result{
+      .list{
+        list-style-type: none;
+        line-height: 50px;
+        padding-left: 15px;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+
 
   }
 
