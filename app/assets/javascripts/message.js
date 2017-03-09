@@ -9,19 +9,16 @@ $(function(){
   $('.js-form').on('submit', function(e){
     e.preventDefault();
     e.stopPropagation();
-    var textField = $('.js-form__text-field');
-    var message = textField.val();
-    debugger;
     var path_name = location.pathname;
+    var form = $('.js-form').get()[0];
+    var formData = new FormData(form);
     $.ajax({
       type: 'POST',
       url: path_name,
-      data: {
-        message: {
-          body: message
-        }
-      },
-      dataType: 'json'
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
     .done(function(data){
       var html = buildHTML(data.message);
@@ -31,5 +28,8 @@ $(function(){
     .fail(function(){
       alert('error');
     });
+  });
+  $('#file_input').on("click", function(){
+    $('#file_input_origin').click();
   });
 });
