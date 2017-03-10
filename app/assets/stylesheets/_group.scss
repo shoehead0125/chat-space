@@ -74,6 +74,9 @@
 
     .chat-group-form__search{
       @include clearfix;
+      #user-search-hidden{
+        display: none;
+      }
     }
 
     #user-search-result{
@@ -83,20 +86,31 @@
         padding-left: 15px;
         border-bottom: 1px solid #ddd;
       }
+      a{
+        float: right;
+        line-height: 30px;
+        font-size: 15px;
+        margin-top: 12px;
+      }
     }
 
 
   }
 
   .chat-group-user {
-    padding: 0 15px;
     line-height: 50px;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
     @include clearfix;
 
     &__name {
-      float: left;
+      list-style-type: none;
+      padding-left: 15px;
+      border-bottom: 1px solid #ddd;
+      a{
+        float: right;
+        font-size: 15px;
+        line-height: 30px;
+        margin-top: 12px;
+      }
     }
 
     &__btn {
