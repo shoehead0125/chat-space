@@ -55,6 +55,7 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'rake', '<11.0'
+gem 'carrierwave'
 
 group :test do
   gem 'rails-controller-testing'
