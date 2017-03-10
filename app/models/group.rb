@@ -4,4 +4,8 @@ class Group < ApplicationRecord
   has_many :user_groups
   has_many :messages
   accepts_nested_attributes_for :user_groups
+
+  def find_last_message
+    messages.order('created_at DESC').last
+  end
 end

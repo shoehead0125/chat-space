@@ -1,3 +1,6 @@
 .group-menu__content
   =link_to group.name, group_messages_path(group)
-  %p= group.messages.order(:created_at).last.body
+  - if group.find_last_message.present?
+    %p= group.find_last_message.body
+  - else
+    %p= "まだ新着メッセージがありません。"
