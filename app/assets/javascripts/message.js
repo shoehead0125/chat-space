@@ -6,6 +6,29 @@ $(function(){
                   <p class=tweet>${ message.body }</p></div>`);
     return html;
   }
+  function update(){
+    var path_name = location.pathname;
+    $.ajax({
+      type: 'GET',
+      url: path_name,
+      dataType: 'json'
+    })
+    .done(function(data){
+      var messages_arry = data.message_update.messages;
+      $('.chat-space__tweet').remove();
+      $.each(messages_arry, function(i, message){
+        var html = buildHTML(message);
+        $('.right-contents__chat-space').append(html);
+      });
+    })
+    .fail(function(data){
+      alert('error');
+    });
+  }
+  update();
+  setInterval("update()", 20000);
+
+
   $('.js-form').on('submit', function(e){
     e.preventDefault();
     e.stopPropagation();
