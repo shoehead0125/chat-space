@@ -8,10 +8,12 @@
         = f.text_field :name, placeholder: "グループ名を入力してください", id: "chat-group-name", class: "chat-group-form__input"
     .chat-group-form__field
       .chat-group-form__field--left
-        = f.label :users, "チャットメンバーを追加", class: "chat-group-form__label"
+        = f.label :user_ids, "チャットメンバーを追加", class: "chat-group-form__label"
       .chat-group-form__field--right
         .chat-group-form__search
-          = f.text_field :users, placeholder: "追加したいメンバーの名前を入力してください。", id: "chat-member-name", value: "", class: "chat-group-form__input"
+          = text_field_tag "chat-member-name", "",placeholder: "追加したいメンバーの名前を入力してください。", class: "chat-group-form__input"
+          #user-search-hidden
+            = collection_check_boxes(:group, :user_ids, users, :id, :name)
         #user-search-result
     .chat-group-form__field
       .chat-group-form__field--left
@@ -20,8 +22,6 @@
         .chat-group-form__field--right
           #chat-group-users
             #chat-group-users-22.chat-group-user
-            -# 暫定的に下記の実装
-              %p.chat-group-user__name seo_kyohei
     .chat-group-form__field
       .chat-group-form__field--left
       .chat-group-form__field--right
