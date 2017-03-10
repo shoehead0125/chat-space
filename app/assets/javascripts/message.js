@@ -6,7 +6,7 @@ $(function(){
                   <p class=tweet>${ message.body }</p></div>`);
     return html;
   }
-  function update(){
+  setInterval(function(){
     var path_name = location.pathname;
     $.ajax({
       type: 'GET',
@@ -24,9 +24,7 @@ $(function(){
     .fail(function(data){
       alert('error');
     });
-  }
-  update();
-  setInterval("update()", 20000);
+  }, 3000);
 
 
   $('.js-form').on('submit', function(e){
