@@ -6,6 +6,6 @@ class Group < ApplicationRecord
   accepts_nested_attributes_for :user_groups
 
   def find_last_message
-    self.messages.order('created_at DESC').last
+    messages.order('created_at DESC').last
   end
 end
