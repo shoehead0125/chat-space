@@ -5,14 +5,24 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  case Rails.env
+    when 'test'
+      storage :file
+    when 'development' || 'production'
+      storage :fog
+  end
   # storage :fog
   # process convert: 'jpg'
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    case Rails.env
+      when 'test'
+        "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      when 'development'
+        "dev-chat-space-image-store"
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

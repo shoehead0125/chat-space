@@ -56,6 +56,8 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'rake', '<11.0'
 gem 'carrierwave'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 group :test do
   gem 'rails-controller-testing'
