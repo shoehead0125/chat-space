@@ -10,10 +10,9 @@ CarrierWave.configure do |config|
   config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
 
   case Rails.env
-    # デプロイ時に実装する
-    # when 'production'
-    #   config.fog_directory = 'プロジェクト名-image-store'
-    #   config.asset_host = 'https://プロジェクト名-image-store.s3-ap-northeast-1.amazonaws.com'
+    when 'production'
+      config.fog_directory = 'pro-chat-space-image-store'
+      config.asset_host = 'https://pro-cgat-space-image-store.s3-ap-northeast-1.amazonaws.com'
     when 'development'
       config.fog_directory = 'dev-chat-space-image-store'
       config.asset_host = 'https://dev-chat-space-image-store.s3-ap-northeast-1.amazonaws.com'
