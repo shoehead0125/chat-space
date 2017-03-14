@@ -62,3 +62,7 @@ gem 'dotenv-rails'
 group :test do
   gem 'rails-controller-testing'
 end
+
+group :production do
+  gem 'unicorn'
+end
