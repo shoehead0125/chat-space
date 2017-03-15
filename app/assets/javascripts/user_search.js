@@ -3,14 +3,16 @@ $(function(){
   var preWord;
 
   function appendList_search(user){
-    var item = (`<li class="list" name="${ user.name }" id="list-${ user.id }">${ user.name }
-                    <a class="add_user" id="${ user.id }" >追加</a></li>`);
+    var str = ('<li class="list" name=' + user.name + ' id=list-' + user.id + '>' + user.name
+               + '<a class="add_user" id=' + user.id + '>追加</a></li>').toString();
+    var item = $(str);
     list.append(item);
   }
 
   function appendList_result(name, input){
-    var item = (`<li class="chat-group-user__name">${ name }
-                  <a class="delete_user" id="${ input }">削除</a></li>`);
+    var item = $('<li class="chat-group-user__name">' + name
+               + '<a class="delete_user" id=' + input + '>削除</a></li>');
+    debugger;
     $(".chat-group-user").append(item);
   }
 
@@ -54,10 +56,11 @@ $(function(){
       var parent = $(target).parent();
       var input = $(target).attr("id");
       var name = $(parent).attr("name");
+      debugger;
 
       $(parent).remove();
       appendList_result(name, input);
-      $(`#group_user_ids_${input}`).prop("checked", true);
+      $('#group_user_ids_' + input).prop("checked", true);
     }
   });
   $(document).on("click",function(e){
@@ -67,7 +70,7 @@ $(function(){
       var input = $(target).attr("id");
 
       $(parent).remove();
-      $(`#group_user_ids_${input}`).prop("checked", false);
+      $('#group_user_ids_' + input).prop("checked", false);
     }
   });
 });

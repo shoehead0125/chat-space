@@ -1,13 +1,13 @@
 $(function(){
   function buildHTML(message){
-    var html = (`<div class="chat-space__tweet">
-                  <p class=tweet--name>${ message.name }</p>
-                  <p class=tweet--time>${ message.created_at }</p>
-                  <p class=tweet>${ message.body }</p></div>`);
+    var html = $('<div class="chat-space__tweet">'
+              +  '<p class=tweet--name>' + message.name + '</p>'
+              +  '<p class=tweet--time>' + message.created_at + '</p>'
+              +  '<p class=tweet>' + message.body + '</p></div>');
     return html;
   }
   $(window).bind("load", function(){
-    if(document.URL.match(/messages/)){
+    if(/messages/.test(document.URL)){
       setInterval(function(){
         var path_name = location.pathname;
         $.ajax({
